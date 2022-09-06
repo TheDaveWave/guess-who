@@ -42,10 +42,12 @@ function startGame(event){
 }
 
 
-
+// check if clicked image's name data type is equal to the mysteryPerson variable.
+// and display if correct or wrong to the DOM.
 function checkImage (event) {
+    // set variable equal to the data key name of the clicked image.
     let clickedImage = $(event.target).data('name');
-    console.log(clickedImage);
+    // console.log(clickedImage);
     if(mysteryPerson === clickedImage) {
         console.log('Correct!');
     } else {
