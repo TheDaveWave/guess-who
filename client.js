@@ -1,4 +1,4 @@
-/// <reference path="jQuery.js" />
+// / <reference path="jQuery.js" />
 
 console.log('Here are all the available people:', people);
 
@@ -32,11 +32,11 @@ function startGame(){
 
     // assign random name using rdmNum variable to our mystery person
     let mysteryPerson = people[rdmNum].name;
-    console.log('Random Person', mysteryPerson);
+    //console.log('Random Person', mysteryPerson);
 
+    // append mysterPerson to DOM.
+    $('#gameText').text(`Pick the correct picture belonging to ${mysteryPerson}!`);
     
-
-
 
 }
 
