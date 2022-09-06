@@ -6,6 +6,7 @@ $(readyNow);
 
 function readyNow () {
     displayPictures();
+    $('#startButton').on('click', startGame);
 }
 
 
@@ -18,10 +19,30 @@ function displayPictures () {
     }
 }
 
+
+// make a feature that does not allow the same name to appear twice in a row.
+
+
+// prompt user with a random person.name and display it on the DOM.
+
 function startGame(){
+    // set variable to a random number between 0 and the the length of the array - 1.
+    let rdmNum = randomNumber(0, people.length-1);
+    //TEST: console.log('randomNumber:', rdmNum);
+
+    // assign random name using rdmNum variable to our mystery person
+    let mysteryPerson = people[rdmNum].name;
+    console.log('Random Person', mysteryPerson);
+
     
+
+
 
 }
 
+// handy function that generates a random number given a min and max value.
+function randomNumber(min, max){
+    return Math.floor(Math.random() * (1 + max - min) + min);
+}
 
 
