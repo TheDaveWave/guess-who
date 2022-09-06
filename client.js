@@ -23,7 +23,7 @@ function displayPictures () {
 // prompt user with a random person.name and display it on the DOM.
 let mysteryPerson = '';
 
-function startGame(event){
+function startGame(){
     // set variable to a random number between 0 and the the length of the array - 1.
     let rdmNum = randomNumber(0, people.length-1);
     //TEST: console.log('randomNumber:', rdmNum);
@@ -47,6 +47,8 @@ function checkImage (event) {
     $('#resultText').empty();
     if(mysteryPerson === clickedImage) {
         $('#resultText').append('Hurray! You WIN!');
+        // reset the game after 3 seconds.
+        setTimeout(startGame, 3000);
         // console.log('Correct!');
     } else {
         $('#resultText').append(`Oh No! YOU'RE WRONG!`);
