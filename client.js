@@ -20,11 +20,6 @@ function displayPictures () {
     }
 }
 
-
-
-// make a feature that does not allow the same name to appear twice in a row.
-
-
 // prompt user with a random person.name and display it on the DOM.
 let mysteryPerson = '';
 
@@ -32,6 +27,7 @@ function startGame(event){
     // set variable to a random number between 0 and the the length of the array - 1.
     let rdmNum = randomNumber(0, people.length-1);
     //TEST: console.log('randomNumber:', rdmNum);
+    $('#resultText').empty();
 
     // assign random name using rdmNum variable to our mystery person
     mysteryPerson = people[rdmNum].name;
@@ -48,12 +44,18 @@ function checkImage (event) {
     // set variable equal to the data key name of the clicked image.
     let clickedImage = $(event.target).data('name');
     // console.log(clickedImage);
+    $('#resultText').empty();
     if(mysteryPerson === clickedImage) {
-        console.log('Correct!');
+        $('#resultText').append('Hurray! You WIN!');
+        // console.log('Correct!');
     } else {
-        console.log('Wrong!');
+        $('#resultText').append(`Oh No! YOU'RE WRONG!`);
+        // console.log('Wrong!');
     }
 }
+
+
+// make a feature that does not allow the same name to appear twice in a row.
 
 // handy function that generates a random number given a min and max value.
 function randomNumber(min, max){
